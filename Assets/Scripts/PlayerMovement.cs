@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
 	// We can switch this off if we want the player to not move
 	public bool canMove = true;
 	//Double Jump!!
-	public bool isInAir = false;
+	public bool canDoubleJump = false;
 	//This can be to switch off if we want to have double jump unlocked.
-	public bool DJUnlocked = false;
+	public bool DoubleJumpUnlocked = false;
 	
 	// Velocity vector
 	private Vector2 mov;
@@ -62,13 +62,13 @@ public class PlayerMovement : MonoBehaviour
 			{
 				v = jumpSpeed;
 				AudioSource.PlayClipAtPoint(jumpSound, transform.position);
-				isInAir = true;
+				canDoubleJump = true;
 			}
-			else if(isInAir && Input.GetKeyDown("space") && DJUnlocked)
+			else if(canDoubleJump && isJumping && DoubleJumpUnlocked)
 			{
 				v = jumpSpeed;
 				AudioSource.PlayClipAtPoint(jumpSound, transform.position);
-				isInAir = false;
+				canDoubleJump = false;
 			}
 			else
 				v = rigidbody2D.velocity.y;

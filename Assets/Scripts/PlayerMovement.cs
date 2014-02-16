@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
 		{
 			isJumping = true;
 		}
+
+        animator.SetBool("IsJumping", !IsGrounded());
 		
 		
 		// Set Direction

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	// We can switch this off if we want the player to not move
 	public bool canMove = true;
 	//Double Jump!!
-	public bool canDoubleJump = false;
+	private bool canDoubleJump = false;
 	//This can be to switch off if we want to have double jump unlocked.
 	public bool DoubleJumpUnlocked = false;
 	
